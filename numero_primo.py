@@ -11,8 +11,8 @@ def is_prime(number):
         for i in range(3, number):
             if number % i == 0:
                 return False
-            else:
-                return True
+    
+    return True
 
 def run():
     #pass
