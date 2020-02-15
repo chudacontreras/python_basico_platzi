@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+'''Recordemos que esto es solo azucar sintactica '''
 
 def protected(func):#funcion que recibe como parametros otra funcion
 
@@ -20,5 +20,6 @@ def protected_func():
 
 if __name__ == '__main__':
     password = str(raw_input('Ingresa tu contraseña: '))
-
+    #wrapper = protected(protected_func)
+    #wrapper(password)
     protected_func(password)

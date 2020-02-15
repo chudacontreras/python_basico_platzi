@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 
 """ Este programa es un juego de azar en el que se lanza un dado y si el valor no es ni 1 ni 6 se pierde.
@@ -96,22 +95,4 @@ class Dice:
 		else:
 			print(self.__DADO[5])
 
-def main():
-	dado = Dice()
 
-
-	dado.roll()
-
-	if 1 < dado.get_value() and dado.get_value() < 6:
-		print("perdiste, sacaste", dado.get_value())
-	else:
-		print("ganaste, sacaste", dado.get_value())
-
-	#intenten usar esta linea de codigo y verán que les arrojará error ya que es una variable privada
-
-	#print(dado.__SIDES)
-
-
-
-if __name__ == '__main__':
-	main()
