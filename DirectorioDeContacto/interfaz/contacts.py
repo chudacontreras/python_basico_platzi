@@ -39,14 +39,34 @@ class ContactBook:
         else:
             self._not_found()
     
-    def update(self, name, phone, email):
+    def update(self, name):
         for contact in self._contacts:
             if contact.name.lower() == name.lower():
-                contact.phone = phone
-                contact.email = email
+                self._print_contact(contact)
+                to_update = str(raw_input('''
+                ¿Qué deseas actualizar?
+                
+                [n]ombre de contacto
+                [t]elefono de contacto
+                [e]mail de contacto
+                [s]alir
+                '''))
+            if to_update == 'n':
+                contact.name = str(raw_input('Escriba el nuevo nombre: '))
+                self._save()
+                break
+            elif to_update == 't':
+                contact.phone = str(raw_input('Escriba el nuevo telefono: '))
+                self._save()
+                break
+            elif to_update == 'e':
+                contact.email = str(raw_input('Escriba el nuevo email: '))
+                self._save()
+                break
+            elif to_update == 'sa':
                 break
         else:
-            self._not_found()
+            print('Esta acción no se puede realizar')
 
     def _save(self):
         with open('contacts.csv', 'w') as f:
@@ -102,10 +122,10 @@ def run():
 
         elif command == 'ac':
             name = str(raw_input('Escribe el nombre del contacto: '))
-            phone = str(raw_input('Escribe el teléfono del contacto: '))
-            email = str(raw_input('Escribe el email del contacto: '))
+            #phone = str(raw_input('Escribe el teléfono del contacto: '))
+            #email = str(raw_input('Escribe el email del contacto: '))
 
-            contact_book.update(name, phone, email)
+            contact_book.update(name)
 
         elif command == 'b':
 
