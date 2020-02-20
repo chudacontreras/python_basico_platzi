@@ -94,5 +94,3 @@ class Dice:
 			print(self.__DADO[4])
 		else:
 			print(self.__DADO[5])
-
-
