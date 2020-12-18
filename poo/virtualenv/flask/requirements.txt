@@ -1,4 +1,4 @@
-requests==2.13.0
+requests==2.20.0
 beautifulsoup4==4.5.3
 Click==7.0
 Flask==1.1.1
